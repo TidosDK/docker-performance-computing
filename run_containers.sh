@@ -1,8 +1,12 @@
 #!/bin/sh
 
+if [ "$1" != "run_now_no_reset" ]; then
+    sleep 180
+fi
+
 # Number of containers to run
 AMOUNT_OF_CONTAINERS=5
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"  # Directory where the script is located
+SCRIPT_DIR="/LOCATION_OF_THIS_FILE"  # Directory where the script is located
 EXPERIMENT_COUNTER_FILE="$SCRIPT_DIR/experiment_counter.txt"
 
 # Retrieve and increment the experiment number
@@ -107,6 +111,7 @@ done
 
 echo "Experiment completed. Data saved in $EXPERIMENT_DIR."
 
-# Optional: Reboot system (commented out for now)
-# echo "Rebooting system..."
-# sudo reboot
+if [ "$1" != "run_now_no_reset" ]; then
+    echo "Rebooting system..."
+    sudo reboot
+fi

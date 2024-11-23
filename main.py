@@ -3,6 +3,7 @@ import random
 import string
 import os
 
+
 def is_prime(n):
     """Check if a number is prime."""
     if n <= 1:
@@ -18,6 +19,7 @@ def is_prime(n):
         i += 6
     return True
 
+
 def calculate_primes_for_duration(duration_seconds):
     """Calculate prime numbers for the specified duration in seconds."""
     start_time = time.time()
@@ -31,10 +33,12 @@ def calculate_primes_for_duration(duration_seconds):
 
     return primes
 
+
 def generate_random_filename(extension="txt"):
     """Generate a random filename with the given extension."""
     random_str = ''.join(random.choices(string.ascii_letters + string.digits, k=24))
     return f"{random_str}.{extension}"
+
 
 def write_highest_prime_to_file(duration_seconds):
     """Calculate primes for the given duration and write the highest prime to a shared volume."""
