@@ -162,3 +162,4 @@ cython_debug/
 #.idea/
 /data
 experiment_counter.txt
+experiment_counter-non-container.txt
